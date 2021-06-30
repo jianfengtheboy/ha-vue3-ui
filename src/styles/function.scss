@@ -1,0 +1,20 @@
+@function floatFn($fl) {
+  @if($fl == left) {
+    @return right;
+  }
+  @return left;
+}
+
+@function direction($dir){
+  @return $dir;
+}
+
+/**
+ * 系统十二宫格布局设定
+ */
+ @for $i from 1 through 12 {
+  .vite-cell-#{$i} {
+    width: calc((100% / 12 * #{$i}));
+    float: left;
+  }
+}

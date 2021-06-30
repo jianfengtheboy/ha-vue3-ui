@@ -1,0 +1,124 @@
+@import 'function.scss';
+
+@mixin transition($trans) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -o-transition: $trans;
+  -ws-transition: $trans;
+  transition: $trans;
+}
+
+@mixin border-radius($num: 4px) {
+  -webkit-border-radius: $num;
+  -o-border-radius: $num;
+  -moz-border-radius: $num;
+  -ws-border-radius: $num;
+  border-radius: $num;
+}
+
+@mixin transform($tranParam) {
+  -webkit-transform: $tranParam;
+  -moz-transform: $tranParam;
+  -ms-transform: $tranParam;
+  -o-transform: $tranParam;
+  transform: $tranParam;
+}
+
+@mixin transform-origin($horizon, $vertical) {
+  -webkit-transform-origin: $horizon $vertical;
+  -moz-transform-origin: $horizon $vertical;
+  -ms-transform-origin: $horizon $vertical;
+  transform-origin: $horizon $vertical;
+}
+
+@mixin box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin box-shadow($source, $target) {
+  -webkit-box-shadow: $source, $target;
+  -moz-box-shadow: $source, $target;
+  -o-box-shadow: $source, $target;
+  -ws-box-shadow: $source, $target;
+  box-shadow: $source, $target;
+}
+
+@mixin padding($px) {
+  padding: $px;
+}
+
+@mixin bold-font($size, $weight, $color: #000) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin position($position, $direction, $directionVal, $height, $width: 100%, $zINdex: 999999999) {
+  position: $position;
+  #{direction($direction)}: $directionVal;
+  width: $width;
+  height: $height;
+  z-index: $zINdex;
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  -ws-animation: $animation;
+  animation: $animation;
+}
+
+/**
+* 文字超出省略号
+*/
+@mixin text-overflow($width: 100%) {
+  display: inline-block;
+  width: $width;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+/**
+* 边框方向-大小
+* param $direction 方向（left, right,top,bottom）
+*/
+@mixin border-direction($direction, $num: 1px, $color: #000) {
+  border-#{direction($direction)}: $num solid $color;
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content:"";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin frames($frameName) {
+  @-webkit-keyframes #{$frameName} {
+    @content;
+  }
+  @-moz-keyframes #{$frameName} {
+    @content;
+  }
+  @-o-keyframes #{$frameName} {
+    @content;
+  }
+  @keyframes #{$frameName} {
+    @content;
+  }
+}
+
+@mixin animation($val) {
+	animation: $val;
+	-webkit-animation: $val;
+	-moz-animation: $val;
+	-ms-animation: $val;
+}
