@@ -24,9 +24,6 @@ export default defineComponent({
     sideBar,
     navBar,
     appMain
-  },
-  setup() {
-
   }
 })
 </script>

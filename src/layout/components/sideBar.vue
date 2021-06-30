@@ -56,11 +56,7 @@ export default defineComponent({
       // 找到当前路由的信息
       function findCurrentRoute(routes) {
         return routes.map((item, key) => {
-          if (item.path === indexPath) {
-
-          } else {
-            if (item.children) findCurrentRoute(item.children)
-          }
+          if (item.children) findCurrentRoute(item.children)
         })
         return
       }

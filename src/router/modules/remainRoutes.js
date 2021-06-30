@@ -27,7 +27,7 @@ const remainRoutes = [
   //   redirect: "/error/404",
   //   meta: {
   //     icon: "el-icon-s-home",
-  //     title: "message.hshome",
+  //     title: "404 Not Found",
   //     showLink: false,
   //     savedPosition: false,
   //     rank: 103,

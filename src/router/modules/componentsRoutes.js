@@ -29,7 +29,7 @@ const componentsRoutes = {
           name: 'haTransition',
           component: () => import(/* webpackChunkName: "transition" */ '@/views/components/haBasic/haTransition/haTransition.vue'),
           meta: {
-            title: "内置过渡动画组件",
+            title: "内置过渡动画",
             showLink: true,
             savedPosition: true
           }
@@ -45,11 +45,31 @@ const componentsRoutes = {
           }
         },
         {
+          path: '/components/haBasic/haContainer',
+          name: 'haContainer',
+          component: () => import(/* webpackChunkName: "haContainer" */ '@/views/components/haBasic/haContainer/haContainer.vue'),
+          meta: {
+            title: "Container 布局容器",
+            showLink: true,
+            savedPosition: true
+          }
+        },
+        {
           path: "/components/haBasic/haButton",
           name: "haButton",
-          component: () => import(/* webpackChunkName: "button" */ "@/views/components/haBasic/haButton/haButton.vue"),
+          component: () => import(/* webpackChunkName: "haButton" */ "@/views/components/haBasic/haButton/haButton.vue"),
           meta: {
-            title: "按钮组件",
+            title: "Button 按钮",
+            showLink: true,
+            savedPosition: true
+          }
+        },
+        {
+          path: "/components/haBasic/haSpace",
+          name: "haSpace",
+          component: () => import(/* webpackChunkName: "haSpace" */ "@/views/components/haBasic/haSpace/haSpace.vue"),
+          meta: {
+            title: "Space 间距",
             showLink: true,
             savedPosition: true
           }

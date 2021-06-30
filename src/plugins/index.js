@@ -3,7 +3,7 @@
  * @LastEditors: Sun
  * @Email: jianfengtheboy@163.com
  * @Date: 2021-06-01 10:41:46
- * @LastEditTime: 2021-06-30 09:43:54
+ * @LastEditTime: 2021-06-30 18:12:24
  */
 import {
   ElAlert,
@@ -71,6 +71,7 @@ import {
   ElSteps,
   ElSubmenu,
   ElSwitch,
+  ElSpace,
   ElTabPane,
   ElTable,
   ElTableColumn,
@@ -157,6 +158,7 @@ const pluginComponents = [
   ElSteps,
   ElSubmenu,
   ElSwitch,
+  ElSpace,
   ElTabPane,
   ElTable,
   ElTableColumn,

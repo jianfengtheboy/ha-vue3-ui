@@ -44,7 +44,7 @@ const whiteList = ['/login', '/register']
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
-  const storageHasLogin = localStorage.getItem('hasLogin')
+  const storageHasLogin = sessionStorage.getItem('hasLogin')
   const { hasLogin } = store.state
 
   // 无需登录或已登录

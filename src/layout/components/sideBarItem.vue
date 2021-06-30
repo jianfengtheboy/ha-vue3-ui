@@ -1,11 +1,3 @@
-<!--
- * @Author: Sun
- * @LastEditors: Sun
- * @Email: jianfengtheboy@163.com
- * @Date: 2021-06-27 15:43:59
- * @LastEditTime: 2021-06-29 23:16:24
- * @Description: 
--->
 <template>
   <div v-if="!item.hidden" class="sidebar-item">
     <template v-if="hasOneShowingChild(item.children, item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren)">
@@ -99,9 +91,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="scss" scoped>
-@import '@/styles/mixin.scss'; 
-
-
-</style>

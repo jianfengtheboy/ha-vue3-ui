@@ -3,8 +3,7 @@
  * @LastEditors: Sun
  * @Email: jianfengtheboy@163.com
  * @Date: 2021-05-25 18:03:12
- * @LastEditTime: 2021-06-26 22:18:06
- * @Description: 
+ * @LastEditTime: 2021-06-30 17:39:43
  */
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -16,7 +15,7 @@ import 'element-plus/packages/theme-chalk/src/base.scss'
 import { install } from '@icon-park/vue-next/es/all'
 import '@icon-park/vue-next/styles/index.css'
 
-
+// 引入样式文件
 import 'reset.css'
 import '@/styles/index.scss'
 
