@@ -4,7 +4,6 @@
       <el-form :model="ruleForm" :rules="rules" ref="loginForm" class="rule-form">
         <el-form-item prop="userName">
           <el-input
-            clearable
             v-model.trim="ruleForm.userName"
             placeholder="请输入用户名"
             prefix-icon="el-icon-user">
@@ -12,7 +11,7 @@
         </el-form-item>
         <el-form-item prop="passWord">
           <el-input
-            clearable
+            maxlength="6"
             type="password"
             show-password
             v-model.trim="ruleForm.passWord"
@@ -22,7 +21,7 @@
         </el-form-item>
         <el-form-item prop="verify">
           <el-input
-            maxlength="2"
+            maxlength="6"
             onkeyup="this.value=this.value.replace(/[^\d.]/g,'');"
             v-model.number="ruleForm.verify"
             placeholder="请输入验证码">
@@ -41,6 +40,7 @@
 import { defineComponent, reactive, ref, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+import { ElMessage } from 'element-plus'
 
 export default defineComponent({
   name: 'login',
@@ -56,14 +56,14 @@ export default defineComponent({
         verify: null
       },
       rules: {
-        userName: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+        userName: [{ required: true, message: '请输入用户名', trigger: 'change' }],
         passWord: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, message: "密码长度必须不小于6位", trigger: "blur" }
+          { required: true, message: '请输入密码', trigger: 'change' },
+          { min: 6, message: '密码长度必须不小于6位', trigger: 'change' }
         ],
         verify: [
-          { required: true, message: "请输入验证码", trigger: "blur" },
-          { type: "number", message: "验证码必须是数字类型", trigger: "blur" }
+          { required: true, message: '请输入验证码', trigger: 'change' },
+          { type: 'number', message: '验证码必须是数字类型', trigger: 'change' }
         ]
       }
     })
@@ -71,13 +71,25 @@ export default defineComponent({
     const onBehavior = async () => {
       loginForm.value.validate((valid) => {
         if (valid) {
-
+          const { userName, passWord, verify } = state.ruleForm
+          if (userName !== 'admin') {
+            return ElMessage.error('登陆失败，账号密码错误！')
+          } else if (passWord !== '123456') {
+            return ElMessage.error('登陆失败，账号密码错误！')
+          } else if (verify !== 666666) {
+            return ElMessage.error('登陆失败，验证码错误！')
+          } else {
+            ElMessage.success('登陆成功！')
+            store.commit('loginSuccess')
+            router.push('/')
+          }
         }
       })
     }
 
     // 免密登录
     const noSecret = () => {
+      ElMessage.success('登陆成功！')
       store.commit('loginSuccess')
       router.push('/')
     }
